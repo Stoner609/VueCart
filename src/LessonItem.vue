@@ -45,8 +45,8 @@ export default {
   },
   methods: {
       //...mapMutations(['addToCart'])
-      ...mapActions(['addToCart'])
-  }
+      ...mapActions(['addToCart']),
+  },
 };
 </script>
 

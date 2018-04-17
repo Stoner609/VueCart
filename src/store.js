@@ -49,6 +49,12 @@ const store = new Vuex.Store({
             // state.cart = [...state.cart, lesson];
             state.cart.push(lesson);
         },
+        deleteToCart(state, lesson) {
+            let idx = state.cart.findIndex(x => {
+                return x.id === lesson.id;
+            }) 
+            state.cart.splice(idx, 1)
+        },
         clearCart(state) {
             state.cart = [];
         },
@@ -65,7 +71,7 @@ const store = new Vuex.Store({
         addToCart({ state, commit, getters }, lesson) {
             !getters.isLessonInCart(lesson)
             ? commit('addToCart', lesson)
-            : alert('已加入購物車');
+            : commit('deleteToCart', lesson)
         },
     },
 });

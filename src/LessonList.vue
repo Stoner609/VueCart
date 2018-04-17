@@ -1,7 +1,7 @@
 <template>
   <div class="list">
       <LessionItem
-        v-for="lesson in lessons"
+        v-for="(lesson, idx) in lessons"
         :lesson=lesson
         :key=lesson.id
       />

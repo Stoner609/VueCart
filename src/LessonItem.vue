@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapGetters , mapMutations } from 'vuex'
+import { mapGetters , mapMutations, mapActions } from 'vuex'
 
 export default {
   props: ["lesson"],
@@ -44,7 +44,8 @@ export default {
     }
   },
   methods: {
-      ...mapMutations(['addToCart'])
+      //...mapMutations(['addToCart'])
+      ...mapActions(['addToCart'])
   }
 };
 </script>

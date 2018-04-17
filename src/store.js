@@ -49,6 +49,9 @@ const store = new Vuex.Store({
             // state.cart = [...state.cart, lesson];
             state.cart.push(lesson);
         },
+        clearCart(state) {
+            state.cart = [];
+        },
     },
     actions: {
         fetchLessons({ commit }) {
@@ -58,6 +61,14 @@ const store = new Vuex.Store({
                     // console.log(rs)
                     commit('setLessons', rs.courses);
                 })
+        },
+        addToCart({ state, commit, getters }, lesson) {
+            if ( getters.isLessonInCart(lesson) == false ) {
+                console.log(lesson.id)
+                commit('addToCart', lesson)
+            } else {
+                alert('已加入購物車');
+            }
         },
     },
 });

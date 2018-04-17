@@ -32,7 +32,7 @@ export default {
         ...mapState(['lessons']),
         searchLessons() {
             return this.lessons.filter(x => {
-                if (x.title.indexOf(this.text) > -1) {
+                if (x.title.toLowerCase().indexOf(this.text.toLowerCase()) > -1) {
                     return x
                 }
             });

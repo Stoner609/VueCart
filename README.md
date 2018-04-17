@@ -1,6 +1,8 @@
 # mycart
 
 > A Vue.js project
+> 簡易的購物車練習
+> 增加：搜尋功能、不重複選取商品、再次點擊移除商品、清除購物商品
 
 ## Build Setup
 
@@ -15,4 +17,8 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## todo：
+ - 實作 Vue-Router應用
+ - 點擊商品圖片, 彈出商品明細
+ - 自己建立商品清單
+ - ....

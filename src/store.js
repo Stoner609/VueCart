@@ -63,12 +63,9 @@ const store = new Vuex.Store({
                 })
         },
         addToCart({ state, commit, getters }, lesson) {
-            if ( getters.isLessonInCart(lesson) == false ) {
-                console.log(lesson.id)
-                commit('addToCart', lesson)
-            } else {
-                alert('已加入購物車');
-            }
+            !getters.isLessonInCart(lesson)
+            ? commit('addToCart', lesson)
+            : alert('已加入購物車');
         },
     },
 });

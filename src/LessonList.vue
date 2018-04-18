@@ -4,7 +4,7 @@
         <input type="text" class="inputStyle" v-model="text" />
       </div>
       <LessionItem
-        v-for="(lesson, idx) in searchLessons"
+        v-for="lesson in searchLessons"
         :lesson=lesson
         :key=lesson.id
       />
@@ -56,11 +56,12 @@ export default {
 .list{
   padding-top: 30px;
   text-align: center;
+  float: left;
+  width: 95%;
 }
 .divStyle {
     padding: 15px;
     text-align: center;
-    
 }
 input[type=text] {
     width: 300px;

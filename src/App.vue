@@ -1,23 +1,26 @@
 <template>
   <div>
-    <Header />
+    <!-- <Header /> -->
+    <Header2 />
     <div class="row">
       <LessonList />
-      <About />
+      <CartDetail />
     </div>
   </div>
 </template>
 
 <script>
 import Header from './Header.vue';
+import Header2 from './Header2.vue';
 import LessonList from './LessonList.vue';
-import About from './About.vue'
+import CartDetail from './CartDetail.vue'
 
 export default {
   components: {
     Header,
+    Header2,
     LessonList,
-    About,
+    CartDetail,
   },
 }
 </script>

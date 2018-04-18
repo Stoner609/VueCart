@@ -1,41 +1,52 @@
 <template>
-    <div class="rightcolumn">
-        <div class="container" @click="OpenNav">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a 
-                href="javascript:void(0)" 
-                class="closebtn" 
-                @click="CloseNav">&times;
-            </a>
-            <div 
-                class="context"
-                v-for="item in cart"
-                :key=item.id
-            >
-                {{item.title}}
-            </div>
-        </div>
-    </div>
+	<div class="rightcolumn">
+		<div class="container" @click="OpenNav">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		<div id="mySidenav" class="sidenav">
+			<a 
+				href="javascript:void(0)" 
+				class="closebtn" 
+				@click="CloseNav">&times;
+			</a>
+			<div style="padding:30px;"></div>
+			<div 
+				class="context"
+				v-for="item in cart"
+				:key=item.id
+			>
+				{{item.title}}
+			</div>
+			<div class="totalPriceStyle">
+				總價：
+				${{price}}
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 var openNav = function () {
-    document.getElementById("mySidenav").style.width = "250px";
+		//document.getElementById("mySidenav").style.width = "250px";
+		document.getElementById("mySidenav").style.height = "100%";
 }
 
 var closeNav = function () {
-    document.getElementById("mySidenav").style.width = "0";
+		//document.getElementById("mySidenav").style.width = "0";
+		document.getElementById("mySidenav").style.height = "0";
 }
 
 export default {
     computed: {
         ...mapState(['cart']),
+        ...mapGetters({
+          lessons: 'lessonsInCart',
+          price: 'priceInCart',
+      }),
     },
     methods: {
         OpenNav() {
@@ -71,16 +82,17 @@ export default {
 }
 
 .sidenav{
-    height: 100%;
-    width: 0;
+    height: 0;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
     right: 0;
     background-color: #111;
     overflow-x: hidden;
+		overflow-y: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    /* padding-top: 60px; */
 }
 
 .sidenav a {
@@ -111,6 +123,14 @@ export default {
     color: #818181;
     width: 100%;
     text-align: left;
+}
+
+.totalPriceStyle {
+    
+    margin: 20px;
+    border-top: solid 1px white; 
+    text-align: center;
+    color: white;
 }
 </style>
 

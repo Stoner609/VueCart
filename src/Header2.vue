@@ -1,14 +1,15 @@
 <template>
     <div class="topnav" id="myTopnav">
-			<a href="#home" class="active">課程</a>
-			<a href="#news">最新消息</a>
-			<a href="#contact">聯絡方式</a>
-      <a href="#about">關於我</a>
+      <router-link to="/" class="active">課程</router-link>
+      <router-link to="/new">最新消息</router-link>
+      <router-link to="/contact">聯絡方式</router-link>
+      <router-link to="/about">關於我</router-link>
       <a 
 				href="javascript:void(0);" 
 				style="font-size:15px;" 
 				class="icon" 
-				@click="dropDownNav">&#9776;</a>
+				@click="dropDownNav">&#9776;
+      </a>
     </div>
 </template>
 

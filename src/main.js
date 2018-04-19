@@ -8,6 +8,6 @@ new Vue({
   el: '#app',
   store,
   router,
-  template: '<router-view>',
+  template: '<router-view />',
   //render: h => h(App)
 })

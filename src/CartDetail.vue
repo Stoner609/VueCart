@@ -1,10 +1,8 @@
 <template>
 	<div class="rightcolumn">
-		<div class="container" @click="OpenNav">
-			<div class="bar1"></div>
-			<div class="bar2"></div>
-			<div class="bar3"></div>
-		</div>
+        <div class="HoverableSidenav" @click="OpenNav">
+            <div id="bar">共{{lessons}}筆</div>
+        </div>
 		<div id="mySidenav" class="sidenav">
 			<a 
 				href="javascript:void(0)" 
@@ -67,70 +65,78 @@ export default {
     margin-top: 30px;
     text-align: right;
 }
-
-.container {
-    display: inline-block;
-    cursor: pointer;
-    padding: 10px;
+.HoverableSidenav div:hover {
+    right: 0px;
 }
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
+#bar {
+    top: 20px;
+    background-color: #4CAF50;
 }
-
 .sidenav{
+    position: fixed;
     height: 0;
     width: 250px;
-    position: fixed;
-    z-index: 1;
     top: 0;
     right: 0;
+    z-index: 1;
+
     background-color: #111;
     overflow-x: hidden;
-		overflow-y: hidden;
+    overflow-y: hidden;
     transition: 0.5s;
-    /* padding-top: 60px; */
 }
-
 .sidenav a {
+    display: block;
+
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
-    display: block;
+
     transition: 0.3s;
 }
-
 .sidenav a:hover {
     color: #f1f1f1;
 }
-
 .sidenav .closebtn {
     position: absolute;
+    margin-right: 50px;
     top: 0;
     left: 0;
+    
     font-size: 36px;
-    margin-right: 50px;
 }
-
 .context{
     padding: 8px 8px 8px 32px;
+    width: 100%;
+
     text-decoration: none;
     font-size: 12px;
-    color: #818181;
-    width: 100%;
     text-align: left;
+    color: #818181;
 }
-
-.totalPriceStyle {
-    
+.totalPriceStyle { 
     margin: 20px;
-    border-top: solid 1px white; 
+
     text-align: center;
+    border-top: solid 1px white; 
     color: white;
+}
+.HoverableSidenav div {
+    cursor: pointer;
+    position: fixed;
+    margin-top: 40px;
+    padding: 15px;
+    right: -50px;
+
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: left;
+    color: white;
+    border-radius: 5px 0 0 5px;
+
+    transition: 0.3s;
 }
 </style>
 
